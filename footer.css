@@ -1,0 +1,125 @@
+/* ==========================
+   PREMIUM FOOTER (APPLE-STYLE DEPTH)
+========================== */
+
+.fb-footer{
+  background:linear-gradient(to bottom, #F5F7FA, #FFFFFF);
+  border-top:none;
+  padding:0px 0 40px;
+}
+
+/* add subtle top separation */
+.fb-footer::before{
+  content:"";
+  display:block;
+  height:1px;
+  background:rgba(0,0,0,0.03);
+  margin-bottom:60px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:60px;
+  margin-bottom:60px;
+}
+
+/* brand block */
+.footer-brand h3{
+  font-size:1.2rem;
+  font-weight:600;
+  margin-bottom:12px;
+}
+
+.footer-brand p{
+  color:var(--text-secondary);
+  max-width:320px;
+  line-height:1.7;
+}
+
+/* links */
+.footer-links h4{
+  font-size:0.85rem;
+  font-weight:600;
+  margin-bottom:14px;
+  color:var(--text);
+  opacity:0.8;
+}
+
+.footer-links a{
+  display:block;
+  font-size:0.95rem;
+  color:var(--text-secondary);
+  margin-bottom:10px;
+  transition:0.2s ease;
+}
+
+.footer-links a:hover{
+  color:var(--primary);
+  transform:translateX(3px);
+}
+
+/* bottom */
+.footer-bottom{
+  border-top:1px solid var(--border);
+  padding-top:20px;
+  display:flex;
+  text-align:center;
+  place-items:center; /* ← Centers both horizontally and vertically */
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  color:var(--text-muted);
+  font-size:0.85rem;
+}
+
+.footer-center{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    text-align:center;
+    color:var(--text-muted);
+    font-size:0.85rem;
+    width: auto; /* ← ADD THIS - makes it shrink to content */
+}
+
+.built-on{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    font-weight:500;
+    color:var(--text-secondary);
+}
+
+.built-on img{
+    width:18px;
+    height:18px;
+    object-fit:contain;
+    opacity:0.9;
+}
+
+/* accent line */
+.footer-accent{
+  width:40px;
+  height:2px;
+  background:var(--primary);
+  margin-bottom:15px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    align-items:center;
+  }
+}

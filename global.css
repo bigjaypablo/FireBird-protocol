@@ -1,0 +1,478 @@
+/* ==========================
+   FIREBIRD DESIGN SYSTEM v2 (PREMIUM)
+========================== */
+
+:root{
+
+  /* =========================
+     CORE BACKGROUND SYSTEM
+  ========================= */
+
+  --bg:#FFFFFF;
+  --bg-soft:#F7F8FA;
+  
+  /* Surfaces */
+  --surface:#FFFFFF;
+  --surface-alt:#F3F5F7;
+
+  /* =========================
+     TEXT SYSTEM (IMPROVED READABILITY)
+  ========================= */
+
+  --text:#0B0B0B;
+  --text-secondary:#5C5C5C;
+  --text-muted:#8A8A8A;
+
+  /* =========================
+     BRAND COLORS
+  ========================= */
+
+  --primary:#FF6A00;  /* Orange CTA */
+  --secondary:#3B9BFF;  /* Blue Accent */
+
+  --highlight:#FFC700;   /* Gold highlight */
+  
+    /* =========================
+     BORDERS
+  ========================= */
+
+  --border:rgba(0,0,0,0.08);
+  
+  
+
+  /* =========================
+     LAYOUT
+  ========================= */
+
+  --container:1200px;
+
+  /* =========================
+     RADIUS (more modern = softer)
+  ========================= */
+
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:24px;
+
+  /* =========================
+     TYPOGRAPHY CONTROL
+  ========================= */
+
+  --line-height:1.6;
+
+}
+
+/* ==========================
+   RESET (CLEANER)
+========================== */
+
+*,
+*::before,
+*::after{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui, sans-serif;
+  line-height:var(--line-height);
+  overflow-x:hidden;
+ 
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container{
+  width:92%;
+  max-width:var(--container);
+  margin:0 auto;
+}
+
+/* ==========================
+   LINKS
+========================== */
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* ==========================
+   IMAGES
+========================== */
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+/* ==========================
+   SECTIONS (KEY FOR PREMIUM FEEL)
+========================== */
+
+section{
+  padding:110px 0;
+}
+
+
+
+
+/* ==========================
+   FULL SCREEN HERO (APPLE STYLE)
+========================== */
+
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:var(--surface);
+  position:relative;
+  padding:0 20px;
+}
+
+/* soft light atmosphere */
+.hero::before{
+  content:"";
+  position:absolute;
+  width:800px;
+  height:800px;
+  background:radial-gradient(circle, rgba(255,106,0,0.08), transparent 60%);
+  top:-200px;
+  left:50%;
+  transform:translateX(-50%);
+  filter:blur(60px);
+  z-index:0;
+}
+
+/* center wrapper */
+.hero-center{
+  position:relative;
+  z-index:1;
+  max-width:900px;
+}
+
+/* brand label */
+.hero-brand{
+  font-size:0.9rem;
+  color:var(--primary);
+  font-weight:600;
+  margin-bottom:20px;
+  letter-spacing:0.5px;
+}
+
+/* main title */
+.hero-center h1{
+  font-size:4.5rem;
+  line-height:1.05;
+  letter-spacing:-1.5px;
+  color:var(--text);
+  margin-bottom:20px;
+}
+
+@media(max-width:900px){
+
+.hero-center h1{
+    font-size:2.4rem;
+}
+
+.hero-desc{
+    font-size:1rem;
+}
+
+}
+
+/* description */
+.hero-desc{
+  font-size:1.1rem;
+  color:var(--text-secondary);
+  max-width:650px;
+  margin:0 auto 30px;
+  line-height:1.6;
+}
+
+/* CTA */
+.hero-actions{
+  display:flex;
+  justify-content:center;
+}
+
+
+
+
+
+
+
+
+
+/* ==========================
+   MISSION SECTION
+========================== */
+
+.mission{
+    padding:140px 0;
+    background:var(--bg-soft);
+    text-align:left;
+}
+
+.mission-wrapper{
+    max-width:800px;
+}
+
+
+.mission h2{
+    font-size:3rem;
+    line-height:1.1;
+    letter-spacing:-0.04em;
+    color:var(--text);
+}
+
+
+
+
+/* ==========================
+   ADVANTAGES SECTION
+========================== */
+
+.advantages{
+    padding:140px 0;
+    background:var(--surface);
+}
+
+.section-header{
+    text-align:left;
+    margin-bottom:60px;
+}
+
+.section-label{
+    display:inline-block;
+    color:var(--primary);
+    font-size:0.85rem;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.section-header h2{
+    font-size:3rem;
+    line-height:1.1;
+    letter-spacing:-0.04em;
+}
+
+/* GRID */
+.adv-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+}
+
+/* CARD */
+.adv-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-md);
+    padding:26px;
+    transition:all .25s ease;
+}
+
+.adv-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 50px rgba(0,0,0,0.08);
+}
+
+.adv-card h3{
+    font-size:1.1rem;
+    margin-bottom:10px;
+}
+
+.adv-card p{
+    color:var(--text-secondary);
+    line-height:1.6;
+    font-size:0.95rem;
+}
+
+@media(max-width:900px){
+
+    .adv-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-header h2{
+        font-size:2rem;
+    }
+}
+
+
+/* ==========================
+   CTA SECTION
+========================== */
+
+.cta{
+    padding:140px 0;
+    background:var(--bg-soft);
+}
+
+.cta-box{
+    text-align:center;
+
+    max-width:700px;
+    margin:auto;
+}
+
+
+
+/* heading */
+.cta-box h2{
+    font-size:3rem;
+    letter-spacing:-0.04em;
+    margin-bottom:15px;
+}
+
+/* text */
+.cta-box p{
+    color:var(--text-secondary);
+    font-size:1.05rem;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+
+.cta .fb-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 18px 50px rgba(255,106,0,0.35);
+}
+
+
+
+
+
+
+ /* page dissolves in/out” feel  */
+body{
+    opacity:1;
+    transition:opacity 0.35s ease;
+}
+
+/* page load start state */
+body.fade-out{
+    opacity:0;
+}
+
+
+
+
+ /* CSS for active state  */
+.fb-menu a.active{
+    color: var(--primary);
+    position: relative;
+    font-weight:600;
+}
+
+.fb-menu a.active::after{
+    width:100%;
+}
+
+
+
+
+
+
+.footer-socials{
+    margin-top:28px;
+}
+
+.footer-socials h4{
+    margin-bottom:16px;
+    font-size:1rem;
+    font-weight:600;
+    color:var(--text-primary);
+}
+
+.social-icons{
+    display:flex;
+    gap:16px;
+}
+
+.social-icons a{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    color:var(--text-secondary);
+
+    transition:all .3s ease;
+}
+
+.social-icons a:hover{
+    color:var(--primary);
+    border-color:var(--primary);
+    background:rgba(255,255,255,.10);
+    transform:translateY(-3px);
+}
+
+@media (max-width: 768px){
+
+    .footer-socials{
+        margin-top:24px;
+        text-align:center;
+    }
+
+    .footer-socials h4{
+        margin-bottom:14px;
+    }
+
+    .social-icons{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-wrap:wrap;
+        gap:14px;
+    }
+
+    .social-icons a{
+        width:40px;
+        height:40px;
+        font-size:1rem;
+    }
+
+}
+
+
+.social-icons img{
+    width:20px;
+    height:20px;
+    display:block;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+}
+
+
+.footer-socials{
+    grid-column:1;
+}
